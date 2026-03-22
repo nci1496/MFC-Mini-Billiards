@@ -69,10 +69,11 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 {
-	if( !CFrameWnd::PreCreateWindow(cs) )
+	if (!CFrameWnd::PreCreateWindow(cs))
 		return FALSE;
-	// TODO: 在此处通过修改
-	//  CREATESTRUCT cs 来修改窗口类或样式
+
+	cs.style &= ~FWS_ADDTOTITLE;//禁止自命名
+	cs.lpszName = _T("MFC迷你台球");
 
 	return TRUE;
 }

@@ -1,11 +1,19 @@
 ﻿
 // MYTEST0309View.h: CMYTEST0309View 类的接口
 //
-
 #pragma once
-
-
 #include<vector>
+enum class GameState {
+	WAIT_SHOT,    // 等待玩家击球
+	BALL_MOVING,  // 球在运动
+	NEXT_TURN,    // 处理下一回合
+	GAME_OVER     // 游戏结束
+};
+
+enum class Player {
+	PLAYER1, PLAYER2
+};
+
 struct Particle {
 	float x;
 	float y;
@@ -28,7 +36,6 @@ struct Ball {
 	int r;
 	COLORREF color;
 	
-	
 	bool alive;
 	bool isWhite;
 	int number;
@@ -37,9 +44,7 @@ struct Ball {
 
 struct Hole
 {
-	int x;
-	int y;
-	int r;
+	int x;int y;int r;
 };
 
 class CMYTEST0309View : public CView
@@ -61,7 +66,10 @@ public:
 	int	tableMargin = 80;
 	CRect tableRect;
 
-
+public:
+	GameState state = GameState::WAIT_SHOT;
+	Player currentPlayer = Player::PLAYER1;
+	bool freeBall = false;
 
 public:
 	void UpdatePhysics();

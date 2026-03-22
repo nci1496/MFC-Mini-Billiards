@@ -67,7 +67,7 @@ END_MESSAGE_MAP()
 CMYTEST0309View::CMYTEST0309View() noexcept
 {
 	// TODO: 在此处添加构造代码
-
+	
 }
 
 void CMYTEST0309View::UpdatePhysics()
@@ -202,7 +202,17 @@ void CMYTEST0309View::CheckHole()
 				b.r -= 1;
 
 				if (b.isWhite)
-					AfxMessageBox(_T("Game Over"));
+					//AfxMessageBox(_T("Game Over"));
+				{
+					if (MessageBox(
+						_T("白球落袋！游戏结束\n是否重新开局？"),
+						_T("MFC迷你台球"),
+						MB_YESNO | MB_ICONQUESTION
+					) == IDYES)
+					{
+						InitTable();
+					}
+				}
 
 				CreateFirework(b.x, b.y);
 			}
@@ -471,6 +481,8 @@ void CMYTEST0309View::OnTimer(UINT_PTR nIDEvent)
 
 void CMYTEST0309View::InitTable()
 {
+	AfxGetMainWnd()->SetWindowText(_T("MFC迷你台球"));
+	
 	balls.clear();
 	holes.clear();
 
@@ -632,7 +644,7 @@ void CMYTEST0309View::InitTable()
 void CMYTEST0309View::OnInitialUpdate()
 {
 	CView::OnInitialUpdate();
-	
+
 	InitTable();
 
 	SetTimer(1, 16, NULL);
