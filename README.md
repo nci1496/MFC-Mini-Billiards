@@ -7,11 +7,11 @@ This project demonstrates basic physics simulation and interactive gameplay in a
 
 ## 🖼️ Preview
 
-<!-- 在这里放一张截图 -->
+![Gameplay Demo](./demo.gif)
 
 ![Gameplay Screenshot](./screenshot.png)
 
-![Gameplay Demo](./demo.gif)
+![Gameplay Screenshot2](./screenshot2.png)
 
 ---
 
