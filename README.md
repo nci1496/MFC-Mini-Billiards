@@ -66,8 +66,8 @@ GitHub: [nci1496 · GitHub](https://github.com/nci1496/)
 
 ## 📌 Notes
 
-This project was created as a small demo for showcasing interactive graphics and basic game mechanics using MFC.
-
+- This project was created as a small demo for showcasing interactive graphics and basic game mechanics using MFC.
+- For other MFC applications, please visit the website:[nci1496|MathChaosEngine](https://github.com/nci1496/MathChaosEngine)
 ---
 
 ## 📝 License
